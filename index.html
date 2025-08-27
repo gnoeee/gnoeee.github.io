@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gnoeee Tools</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+	body {
+      display: flex;
+	  flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #f3f4f6;
+      font-family: 'Poppins', sans-serif;
+    }
+    .cards-row {
+	  display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+	}
+	.card {
+	   perspective: 1000px;
+	}
+    .card-inner {
+      position: relative; width: 100%; height: 240px; text-align: center;
+      transition: transform 0.6s; transform-style: preserve-3d;
+    }
+    .card:hover .card-inner { transform: rotateY(180deg); }
+    .card-front, .card-back {
+      position: absolute; width: 100%; height: 100%; backface-visibility: hidden;
+      border-radius: 1rem; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; padding: 1rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    .card-front {
+      background: #fefae0; color: #1e293b; font-weight: bold; font-size: 1.2rem;
+    }
+    .card-back {
+      background: #e2e8f0; transform: rotateY(180deg); color: #111827;
+      font-size: 0.95rem; justify-content: space-between;
+    }
+	.card-back p {
+     overflow-y: auto;
+    }
+  </style>
+</head>
+<body class="bg-[#111827] min-h-screen flex flex-col items-center p-6">
+
+  <!-- Portfolio and social links -->
+  <div class="w-full flex flex-col sm:flex-row items-center justify-between mb-6 max-w-5xl">
+    <a href="https://gnoeee.github.io/jinoy-portfolio/" target="_blank"
+       class="text-yellow-200 hover:text-yellow-400 text-lg font-semibold mb-3 sm:mb-0">
+      🌐 Visit My Portfolio
+    </a>
+    <div class="flex gap-5 text-2xl text-gray-300">
+      <a href="https://github.com/gnoeee" target="_blank" class="hover:text-white">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://twitter.com/jinoytomjacob" target="_blank" class="hover:text-sky-400">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://t.me/gnoeee" target="_blank" class="hover:text-sky-500">
+        <i class="fab fa-telegram"></i>
+      </a>
+    </div>
+  </div>
+
+  <h1 class="text-3xl font-bold text-white mb-8">🚀 Gnoeee's Tools</h1>
+  
+  <!-- Tabs -->
+  <div class="mb-6 flex space-x-4">
+    <button id="tab-live" class="px-4 py-2 rounded-lg bg-yellow-400 text-black font-semibold transition-colors duration-300">Live Tools / Projects</button>
+	<button id="tab-archived" class="px-4 py-2 rounded-lg bg-gray-700 text-gray-200 font-semibold transition-colors duration-300">Archived Tools / Projects</button>
+  </div>
+  
+  <!-- Live Tools -->
+  <div id="live-tools" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-5xl">
+	
+	<div class="card cursor-pointer" onclick="window.open('https://globalcontribution.toolforge.org/', '_blank')">
+      <div class="card-inner">
+        <div class="card-front">Wiki Global Contributions</div>
+        <div class="card-back">
+          <p>Global Wiki Contributions tool is a search interface that lets users view a specific user's contributions across various wiki projects. It allows for filtering contributions by namespace, start date, and end date.</p>
+          <div class="flex gap-4 text-xl">
+            <a href="https://globalcontribution.toolforge.org/" target="_blank" onclick="event.stopPropagation()" class="hover:text-blue-600">
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+            <a href="https://github.com/gnoeee/Wiki-Global-Contributions" target="_blank" onclick="event.stopPropagation()" class="hover:text-gray-800">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card cursor-pointer" onclick="window.open('https://gnoeee.github.io/Wiki-Anniversary/', '_blank')">
+      <div class="card-inner">
+        <div class="card-front">Wiki Anniversary</div>
+        <div class="card-back">
+          <p>Find user anniversaries on Wikimedia projects and wish the user :)</p>
+          <div class="flex gap-4 text-xl">
+            <a href="https://gnoeee.github.io/Wiki-Anniversary/" target="_blank" onclick="event.stopPropagation()" class="hover:text-blue-600">
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+            <a href="https://github.com/gnoeee/Wiki-Anniversary" target="_blank" onclick="event.stopPropagation()" class="hover:text-gray-800">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card cursor-pointer" onclick="window.open('https://wdrecentchanges.toolforge.org/', '_blank')">
+      <div class="card-inner">
+        <div class="card-front">Wikidata RC Map</div>
+        <div class="card-back">
+          <p>Displays live changes made to Wikidata on a map. It shows the location of the change with coordinates, along with the sitelink and the QID. This allows users to visualize and track real-time edits to the database across the globe.</p>
+          <div class="flex gap-4 text-xl">
+            <a href="https://wdrecentchanges.toolforge.org/" target="_blank" onclick="event.stopPropagation()" class="hover:text-blue-600">
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+            <a href="https://github.com/gnoeee/Wikidata-RC" target="_blank" onclick="event.stopPropagation()" class="hover:text-gray-800">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+	
+	<div class="card cursor-pointer" onclick="window.open('https://wikiproject-kerala.github.io/Panchayat/', '_blank')">
+      <div class="card-inner">
+        <div class="card-front">Panchayats of Kerala</div>
+        <div class="card-back">
+          <p>The dashboard provides an overview of the local governing bodies in the state. It presents information sourced from Wikidata and includes various official identification codes for these bodies, such as the LSG, LGD and SEC Codes.</p>
+          <div class="flex gap-4 text-xl">
+            <a href="https://wikiproject-kerala.github.io/Panchayat/" target="_blank" onclick="event.stopPropagation()" class="hover:text-blue-600">
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+            <a href="https://github.com/WikiProject-Kerala/Panchayat" target="_blank" onclick="event.stopPropagation()" class="hover:text-gray-800">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card cursor-pointer" onclick="window.open('https://bulkuserinfo.toolforge.org/', '_blank')">
+      <div class="card-inner">
+        <div class="card-front">Wiki User Info Fetcher</div>
+        <div class="card-back">
+          <p>Bulkuserinfo is a tool designed to check the contributions and user rights of multiple users at the same time. It allows users to efficiently retrieve a comprehensive summary of edit count and permissions for a list of accounts.</p>
+          <div class="flex gap-4 text-xl">
+            <a href="https://bulkuserinfo.toolforge.org/" target="_blank" onclick="event.stopPropagation()" class="hover:text-blue-600">
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+             <a href="https://gitlab.wikimedia.org/jinoytommanjaly/bulk-user-info-fetcher" target="_blank" onclick="event.stopPropagation()" class="hover:text-gray-800">
+              <i class="fab fa-gitlab"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<!-- Archived Tools -->
+  <div id="archived-tools" class="hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-5xl">
+
+    <div class="card cursor-pointer" onclick="window.open('https://gnoeee.github.io/covid19-viz/', '_blank')">
+      <div class="card-inner">
+        <div class="card-front">Kerala COVID-19 Data</div>
+        <div class="card-back">
+          <p>A project that provides a district-wise visualization of the COVID-19 spread in Kerala. It contains daily updated data on active cases, confirmed cases, samples taken, negative samples, and hospitalizations, with some of the data added to Wikidata.</p>
+          <div class="flex gap-4 text-xl">
+            <a href="https://gnoeee.github.io/covid19-viz/" target="_blank" onclick="event.stopPropagation()" class="hover:text-blue-600">
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+            <a href="https://github.com/gnoeee/covid19-viz" target="_blank" onclick="event.stopPropagation()" class="hover:text-gray-800">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+	
+	<div class="card cursor-pointer" onclick="window.open('https://wikiproject-india.github.io/covid19dashboard', '_blank')">
+      <div class="card-inner">
+        <div class="card-front">COVID-19 India Dashboard</div>
+        <div class="card-back">
+          <p>This was an initiative dasashboard visualizes COVID-19-related data for India and its states and union territories. This is powered by data from Wikidata and was collaboratively contributed by volunteers</p>
+          <div class="flex gap-4 text-xl">
+            <a href="https://wikiproject-india.github.io/covid19dashboard" target="_blank" onclick="event.stopPropagation()" class="hover:text-blue-600">
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+            <a href="https://github.com/WikiProject-India/covid19dashboard" target="_blank" onclick="event.stopPropagation()" class="hover:text-gray-800">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const liveTab = document.getElementById("tab-live");
+    const archivedTab = document.getElementById("tab-archived");
+    const liveTools = document.getElementById("live-tools");
+    const archivedTools = document.getElementById("archived-tools");
+
+    liveTab.addEventListener("click", () => {
+      liveTools.classList.remove("hidden");
+      archivedTools.classList.add("hidden");
+      liveTab.classList.add("bg-yellow-400","text-black");
+      liveTab.classList.remove("bg-gray-700","text-gray-200");
+      archivedTab.classList.add("bg-gray-700","text-gray-200");
+      archivedTab.classList.remove("bg-yellow-400","text-black");
+    });
+
+    archivedTab.addEventListener("click", () => {
+      archivedTools.classList.remove("hidden");
+      liveTools.classList.add("hidden");
+      archivedTab.classList.add("bg-yellow-400","text-black");
+      archivedTab.classList.remove("bg-gray-700","text-gray-200");
+      liveTab.classList.add("bg-gray-700","text-gray-200");
+      liveTab.classList.remove("bg-yellow-400","text-black");
+    });
+  </script>
+</body>
+</html>
